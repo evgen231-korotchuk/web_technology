@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  .pokemon {
+    margin: 20px;
+    animation: spin 2s linear infinite;
+  }
+  .pokemon2 {
+    margin: 20px;
+    animation: spinover 2s linear infinite;
+  }
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes spinover{
+    100% { transform: rotate(-360deg); }
+  }
+  .pokemon_move_left {
+      position: absolute;
+      animation: moveAcrossScreenLeft 10s linear infinite, spin 2s linear infinite;
+  }
+  .pokemon_move_right {
+      position: absolute;
+      animation: moveAcrossScreenRight 10s linear infinite, spinover 2s linear infinite;
+  }
+  @keyframes moveAcrossScreenLeft {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    100% {
+      top: calc(100vh - 96px); 
+      left: calc(100vw - 56px); 
+    }
+  }
+  @keyframes moveAcrossScreenRight {
+    0% {
+      top: 0;
+      left: calc(100vw - 56px);
+    }
+    100% {
+      top: calc(100vh - 96px); 
+      left: 0; 
+    }
+  }
